@@ -1,6 +1,7 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import Container from 'components/Container/Container';
-import { Logo } from 'components';
+import { Logo, Navigation } from 'components';
 import { AppHeader, AppBar, MainSection } from './SharedLayout.styled';
 
 const SharedLayout = () => {
@@ -10,11 +11,14 @@ const SharedLayout = () => {
         <Container>
           <AppBar>
             <Logo />
+            <Navigation />
           </AppBar>
         </Container>
       </AppHeader>
       <Container>
-        <MainSection></MainSection>
+        <MainSection>
+          <Outlet />
+        </MainSection>
       </Container>
     </>
   );
