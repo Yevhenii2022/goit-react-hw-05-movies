@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from './index';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
 export const App = () => {
   return (
@@ -14,8 +15,9 @@ export const App = () => {
         <Route path="movies/:movieId" element={<MovieDetailsPage />}>
           <Route path="cast" element={<CastPage />} />
           <Route path="reviews" element={<ReviewsPage />} />
-        </Route>
-        <Route path="*" element={<NotFoundPage />} />  */}
+        </Route> */}
+
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
