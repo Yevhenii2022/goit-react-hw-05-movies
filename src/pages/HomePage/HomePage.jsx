@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { fetchTrendingMovies } from 'services/moviesApi';
-import PageHeading from '../../components/index';
-import MoviesGallery from 'components/MoviesGallery';
+import { fetchTrendingMovies } from 'services/moviesAPI';
+import { PageHeading, MoviesGallery } from '../../components/index';
 import { TextWrapper, NoMovieText } from './HomePage.styled';
 
 const HomePage = () => {

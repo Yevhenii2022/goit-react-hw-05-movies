@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import MovieCard from 'components/MovieCard';
+import MovieCard from 'components/MovieCard/MovieCard';
 import { MoviesList } from './MoviesGallery.styled';
 
-export default function MoviesGallery({ moviesSet }) {
+const MoviesGallery = ({ moviesSet }) => {
   return (
     <MoviesList>
       {moviesSet.map(({ id, ...props }) => (
@@ -10,8 +10,10 @@ export default function MoviesGallery({ moviesSet }) {
       ))}
     </MoviesList>
   );
-}
+};
 
 MoviesGallery.propTypes = {
   moviesSet: PropTypes.array.isRequired,
 };
+
+export default MoviesGallery;
