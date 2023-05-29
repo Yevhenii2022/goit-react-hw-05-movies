@@ -8,3 +8,4 @@ export { default as ButtonLink } from './ButtonLink/ButtonLink';
 export { default as Loader } from './Loader/Loader';
 export { default as SearchForm } from './SearchForm/SearchForm';
 export { default as Container } from './Container/Container';
+export { default as MovieDetails } from './MovieDetails/MovieDetails';
