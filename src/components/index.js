@@ -9,3 +9,4 @@ export { default as Loader } from './Loader/Loader';
 export { default as SearchForm } from './SearchForm/SearchForm';
 export { default as Container } from './Container/Container';
 export { default as MovieDetails } from './MovieDetails/MovieDetails';
+export { default as ActorCard } from './ActorCard/ActorCard';
