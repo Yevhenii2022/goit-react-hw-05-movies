@@ -6,6 +6,12 @@ export const showSearchQueryAbsence = () => {
   });
 };
 
+export const showSearchQueryRepeat = searchQuery => {
+  toast(`You already found all the movies on the query "${searchQuery}".`, {
+    icon: '🙅‍♂️',
+  });
+};
+
 export const showSearchResult = totalResults => {
   toast(`Hooray! We found ${totalResults} movies for you.`, {
     icon: '🤟',
