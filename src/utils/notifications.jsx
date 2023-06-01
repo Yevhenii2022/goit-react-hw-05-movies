@@ -12,12 +12,6 @@ export const showSearchQueryRepeat = searchQuery => {
   });
 };
 
-export const showSearchResult = totalResults => {
-  toast(`Hooray! We found ${totalResults} movies for you.`, {
-    icon: '🤟',
-  });
-};
-
 export const showIncorrectQuery = searchQuery => {
   toast(
     `Sorry, there are no movies matching your query: "${searchQuery}". Please try to search something else.`,

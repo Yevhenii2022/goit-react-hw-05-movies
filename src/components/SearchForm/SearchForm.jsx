@@ -12,10 +12,6 @@ import {
 const SearchForm = ({ onSubmit }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
-  // const formReset = () => {
-  //   setSearchQuery('');
-  // };
-
   const onInputChange = evt => {
     const normalizeInputValue = evt.currentTarget.value.toLowerCase();
     setSearchQuery(normalizeInputValue);
@@ -24,7 +20,6 @@ const SearchForm = ({ onSubmit }) => {
   const onSearch = evt => {
     evt.preventDefault();
     onSubmit(searchQuery.trim());
-    // formReset();
   };
 
   return (
