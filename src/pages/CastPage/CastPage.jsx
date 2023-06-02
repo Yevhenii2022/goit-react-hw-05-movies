@@ -28,38 +28,41 @@ const CastPage = () => {
 
   const reducedCast = [...cast].slice(0, 10);
 
-  return !isLoading ? (
-    cast.length > 0 ? (
-      <>
-        <CastList>
-          {reducedCast.map(({ id, ...props }) => (
-            <ActorCard key={id} {...props} />
-          ))}
-        </CastList>
-        <BtnWrapper>
-          <ButtonLink
-            to={`/movies/${movieId}`}
-            text="Close"
-            state={{ from: fromPage }}
-          />
-        </BtnWrapper>
-      </>
-    ) : (
-      <>
-        <NoCastText>Actors cast is absent</NoCastText>
-        <BtnWrapper>
-          <ButtonLink
-            to={`/movies/${movieId}`}
-            text="Close"
-            state={{ from: fromPage }}
-          />
-        </BtnWrapper>
-      </>
-    )
-  ) : (
-    <LoaderWrapper>
-      <Loader />
-    </LoaderWrapper>
+  return (
+    <>
+      {cast.length > 0 ? (
+        <>
+          <CastList>
+            {reducedCast.map(({ id, ...props }) => (
+              <ActorCard key={id} {...props} />
+            ))}
+          </CastList>
+          <BtnWrapper>
+            <ButtonLink
+              to={`/movies/${movieId}`}
+              text="Close"
+              state={{ from: fromPage }}
+            />
+          </BtnWrapper>
+        </>
+      ) : (
+        <>
+          <NoCastText>Actors cast is absent</NoCastText>
+          <BtnWrapper>
+            <ButtonLink
+              to={`/movies/${movieId}`}
+              text="Close"
+              state={{ from: fromPage }}
+            />
+          </BtnWrapper>
+        </>
+      )}
+      {isLoading && (
+        <LoaderWrapper>
+          <Loader />
+        </LoaderWrapper>
+      )}
+    </>
   );
 };
 

@@ -26,38 +26,41 @@ const ReviewsPage = () => {
 
   const fromPage = location.state?.from ?? '/';
 
-  return !isLoading ? (
-    reviews.length > 0 ? (
-      <>
-        <ReviewsList>
-          {reviews.map(({ id, ...props }) => (
-            <ReviewCard key={id} {...props} />
-          ))}
-        </ReviewsList>
-        <BtnWrapper>
-          <ButtonLink
-            to={`/movies/${movieId}`}
-            text="Close"
-            state={{ from: fromPage }}
-          />
-        </BtnWrapper>
-      </>
-    ) : (
-      <>
-        <NoReviewsText>Reviews are absent</NoReviewsText>
-        <BtnWrapper>
-          <ButtonLink
-            to={`/movies/${movieId}`}
-            text="Close"
-            state={{ from: fromPage }}
-          />
-        </BtnWrapper>
-      </>
-    )
-  ) : (
-    <LoaderWrapper>
-      <Loader />
-    </LoaderWrapper>
+  return (
+    <>
+      {reviews.length > 0 ? (
+        <>
+          <ReviewsList>
+            {reviews.map(({ id, ...props }) => (
+              <ReviewCard key={id} {...props} />
+            ))}
+          </ReviewsList>
+          <BtnWrapper>
+            <ButtonLink
+              to={`/movies/${movieId}`}
+              text="Close"
+              state={{ from: fromPage }}
+            />
+          </BtnWrapper>
+        </>
+      ) : (
+        <>
+          <NoReviewsText>Reviews are absent</NoReviewsText>
+          <BtnWrapper>
+            <ButtonLink
+              to={`/movies/${movieId}`}
+              text="Close"
+              state={{ from: fromPage }}
+            />
+          </BtnWrapper>
+        </>
+      )}
+      {isLoading && (
+        <LoaderWrapper>
+          <Loader />
+        </LoaderWrapper>
+      )}
+    </>
   );
 };
 

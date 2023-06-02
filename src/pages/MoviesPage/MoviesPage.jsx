@@ -69,15 +69,18 @@ const MoviesPage = () => {
     <>
       <PageHeading text="Movies" />
       <SearchForm onSubmit={onFormSubmit} />
-      {movies.length > 0 ? (
-        <MoviesGallery moviesSet={movies} />
-      ) : !isLoading ? (
+
+      {movies.length > 0 && <MoviesGallery moviesSet={movies} />}
+
+      {movies.length === 0 && !isLoading && (
         <TextWrapper>
           <WelcomeText>
             All filmmakers are waiting for your search query to show movies.
           </WelcomeText>
         </TextWrapper>
-      ) : (
+      )}
+
+      {isLoading && (
         <LoaderWrapper>
           <Loader />
         </LoaderWrapper>
